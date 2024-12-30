@@ -20,3 +20,15 @@ impl fmt::Display for Id {
         self.0.fmt(f)
     }
 }
+
+impl From<Id> for u64 {
+    fn from(value: Id) -> u64 {
+        value.0
+    }
+}
+
+impl From<u64> for Id {
+    fn from(value: u64) -> Id {
+        Self(value)
+    }
+}
